@@ -15,14 +15,20 @@
             <h2 id="comments" class="text-2xl font-semibold">Comments</h2>
 
             <ul class="divide-y mt-4">
-                @foreach($comments as $comment)
+                @empty($comments)
+                    @foreach($comments as $comment)
+                        <li class="py-4 px-2">
+                            <p>{{ $comment->body }}</p>
+                            <span class="text-sm text-gray-600">
+                                {{ $comment->created_at->diffForHumans() }} by {{ $comment->user->name }}
+                            </span>
+                        </li>
+                    @endforeach
+                    @else($comments)
                     <li class="py-4 px-2">
-                        <p>{{ $comment->body }}</p>
-                        <span class="text-sm text-gray-600">
-                            {{ $comment->created_at->diffForHumans() }} by {{ $comment->user->name }}
-                        </span>
+                        <p> Kein Kommentar vorhanden.</p>
                     </li>
-                @endforeach
+                @endempty
             </ul>
 
             <div class="mt-2">
