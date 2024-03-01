@@ -3,7 +3,7 @@
         <ul class="divide-y">
             @foreach($posts as $post)
                 <li class="py-4 px-2">
-                    <a href="{{ route('posts.index', $post) }}" class="text-xl font-semibold block">{{ $post->title }}</a>
+                    <a href="{{ route('posts.show', $post) }}" class="text-xl font-semibold block">{{ $post->title }}</a>
                     <span class="text-sm text-gray-600">
                         {{ $post->created_at->diffForHumans() }} by {{ $post->user->name }}
                     </span>
