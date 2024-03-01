@@ -16,6 +16,10 @@
 
             <ul class="divide-y mt-4">
                 @empty($comments)
+                    <li class="py-4 px-2">
+                        <p> Kein Kommentar vorhanden.</p>
+                    </li>
+                @else
                     @foreach($comments as $comment)
                         <li class="py-4 px-2">
                             <p>{{ $comment->body }}</p>
@@ -24,10 +28,6 @@
                             </span>
                         </li>
                     @endforeach
-                    @else($comments)
-                    <li class="py-4 px-2">
-                        <p> Kein Kommentar vorhanden.</p>
-                    </li>
                 @endempty
             </ul>
 
