@@ -41,7 +41,7 @@ class PostController extends Controller
     {
         return view('posts.show',[
             'post' => $post,
-            'comments' => $post->comments()->with('user')->paginate(10),
+            'comments' => $post->comments()->latest()->with('user')->paginate(10),
         ]);
     }
 
