@@ -14,10 +14,11 @@ class Comment extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+
     }
 
-    public function post(): HasMany
+    public function post(): BelongsTo
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsTo(Post::class);
     }
 }
