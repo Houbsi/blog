@@ -9,7 +9,7 @@
                     @foreach($posts as $post)
                         <li class="py-4 px-2">
                             <a href="{{ route('posts.show', $post) }}" class="text-xl font-semibold block dark:text-gray-400">{{ $post->title }}</a>
-                            <span class="text-sm text-gray-500">
+                            <span class="text-sm dark:text-gray-500">
                                 {{ $post->created_at->diffForHumans() }} by {{ $post->user->name }}
                             </span>
                         </li>
