@@ -23,6 +23,14 @@ Route::get('/', function () {
             ]);
 });
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/impressum', function () {
+    return view('impressum');
+})->name('impressum');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
