@@ -21,15 +21,15 @@ Route::get('/', function () {
     return view('welcome', [
                 'posts' => Post::latest()->with('user')->get()->take(3),
             ]);
-})->name('startpage');
+})->name('start-page');
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/impressum', function () {
-    return view('impressum');
-})->name('impressum');
+Route::get('/impress', function () {
+    return view('impress');
+})->name('impress');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
