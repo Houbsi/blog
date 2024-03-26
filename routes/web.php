@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('welcome', [
                 'posts' => Post::latest()->with('user')->get()->take(3),
             ]);
-});
+})->name('startpage');
 
 Route::get('/about', function () {
     return view('about');
